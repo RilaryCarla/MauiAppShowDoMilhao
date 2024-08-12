@@ -1,4 +1,5 @@
 ﻿using MauiAppShowDoMilhão.Models;
+using System.Net.Http.Headers;
 
 namespace MauiAppShowDoMilhão
 {
@@ -494,6 +495,311 @@ namespace MauiAppShowDoMilhão
             },
 
 
+        };
+
+        List<Pergunta> perguntas_dificeis = new()
+        {
+            new Pergunta
+            {
+                Id = 41,
+                Enunciado = "Em qual espécie o macho choca os ovos e a fêmea procura alimento?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "Andorinha"},
+                    new Alternativa { Correta = false, Descricao = "Pato Selvagem"},
+                    new Alternativa { Correta = true, Descricao = "Pinguim"},
+                    new Alternativa { Correta = false, Descricao = "Marreco"},
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 42,
+                Enunciado = "Em qual país está localizado o “Muro das lamentações”?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "Alemanha"},
+                    new Alternativa { Correta = false, Descricao = "Brasil"},
+                    new Alternativa { Correta = false, Descricao = "Venezuela"},
+                    new Alternativa { Correta = true, Descricao = "Israel"},
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 43,
+                Enunciado = "Qual desses países não fica na Ásia?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "Paquistão"},
+                    new Alternativa { Correta = false, Descricao = "Japão"},
+                    new Alternativa { Correta = false, Descricao = "Tailândia"},
+                    new Alternativa { Correta = true, Descricao = "Egito"},
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 44,
+                Enunciado = "Qual desses astros de filmes de ação é belga?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "Arnold Schwarzenegger"},
+                    new Alternativa { Correta = false, Descricao = "Sylvester Stallone"},
+                    new Alternativa { Correta = false, Descricao = "Steven Seagal"},
+                    new Alternativa { Correta = true, Descricao = "Jean Claude Van Damme"},
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 45,
+                Enunciado = "Onde foi conduzida a vitória das forças aliadas na Segunda Guerra Mundial?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "Cannes"},
+                    new Alternativa { Correta = true, Descricao = "Normandia"},
+                    new Alternativa { Correta = false, Descricao = "Capri"},
+                    new Alternativa { Correta = false, Descricao = "Marselha"},
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 46,
+                Enunciado = "Onde nasceu Vam Gogh, o grande pintor impressionista?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "Polônia"},
+                    new Alternativa { Correta = false, Descricao = "França"},
+                    new Alternativa { Correta = false, Descricao = "Itália"},
+                    new Alternativa { Correta = true, Descricao = "Holanda"},
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 47,
+                Enunciado = "Qual é a primeira letra do alfabeto grego?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "Delta"},
+                    new Alternativa { Correta = false, Descricao = "Beta"},
+                    new Alternativa { Correta = true, Descricao = "Alfa"},
+                    new Alternativa { Correta = false, Descricao = "Gama"},
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 48,
+                Enunciado = "Qual presidente brasileiro instituiu o AI-5?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = true, Descricao = "Costa e Silva"},
+                    new Alternativa { Correta = false, Descricao = "Ernesto Geisel"},
+                    new Alternativa { Correta = false, Descricao = "João Figueiredo"},
+                    new Alternativa { Correta = false, Descricao = "Itamar Franco"},
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 49,
+                Enunciado = "O que significa literalemnte Perestroika?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "Conversão"},
+                    new Alternativa { Correta = false, Descricao = "Involução"},
+                    new Alternativa { Correta = true, Descricao = "Reestruturação"},
+                    new Alternativa { Correta = false, Descricao = "Regressão"},
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 50,
+                Enunciado = "Qual desses quatro pesos é o mais leve?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "10 onças"},
+                    new Alternativa { Correta = true, Descricao = "10 gramas"},
+                    new Alternativa { Correta = false, Descricao = "10 quilos"},
+                    new Alternativa { Correta = false, Descricao = "10 libras"},
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 51,
+                Enunciado = "Brahma é o deus de que religião?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = true, Descricao = "Hinduísmo"},
+                    new Alternativa { Correta = false, Descricao = "Xintoísmo"},
+                    new Alternativa { Correta = false, Descricao = "Budismo"},
+                    new Alternativa { Correta = false, Descricao = "Islamismo"},
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 52,
+                Enunciado = "Os nazistas foram julgados em:",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "Berlim"},
+                    new Alternativa { Correta = true, Descricao = "Nurembergue"},
+                    new Alternativa { Correta = false, Descricao = "Munique"},
+                    new Alternativa { Correta = false, Descricao = "Paris"},
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 53,
+                Enunciado = "Que ramo da pecuária ocupa-se de bodes e cabras?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "Asinino"},
+                    new Alternativa { Correta = true, Descricao = "Caprino"},
+                    new Alternativa { Correta = false, Descricao = "Bufalino"},
+                    new Alternativa { Correta = false, Descricao = "Muar"},
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 54,
+                Enunciado = "Qual oceano tem o maior volume de água?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "Atlântico"},
+                    new Alternativa { Correta = true, Descricao = "Pacífico"},
+                    new Alternativa { Correta = false, Descricao = "Índico"},
+                    new Alternativa { Correta = false, Descricao = "Ártico"},
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 55,
+                Enunciado = "Qual foi o último presidente militar do Brasil?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "Fernando Collor"},
+                    new Alternativa { Correta = true, Descricao = "João Figueiredo"},
+                    new Alternativa { Correta = false, Descricao = "Tancredo Neves"},
+                    new Alternativa { Correta = false, Descricao = "João Goulart"},
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 56,
+                Enunciado = "Que conflito ideológico envolveu os EUA  e a União Soviética?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = true, Descricao = "Guerra Fria"},
+                    new Alternativa { Correta = false, Descricao = "Guerra do Vietnã"},
+                    new Alternativa { Correta = false, Descricao = "Guerra nas Estrelas"},
+                    new Alternativa { Correta = false, Descricao = "Guerra da Coréia"},
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 57,
+                Enunciado = "O trapézio é um músculo que está situado:",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "No pescoço"},
+                    new Alternativa { Correta = true, Descricao = "No ombro"},
+                    new Alternativa { Correta = false, Descricao = "Na cabeça"},
+                    new Alternativa { Correta = false, Descricao = "No braço"},
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 58,
+                Enunciado = "Quem escreveu o livro “A sangue frio” em 1966?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = true, Descricao = "Truman Capote"},
+                    new Alternativa { Correta = false, Descricao = "Henry James"},
+                    new Alternativa { Correta = false, Descricao = "John Steinbeck"},
+                    new Alternativa { Correta = false, Descricao = "Toni Morrison"},
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 59,
+                Enunciado = "Quem escreveu “Ulisses” em 1922?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "Ernest Hemingway"},
+                    new Alternativa { Correta = false, Descricao = "Marcel Proust"},
+                    new Alternativa { Correta = false, Descricao = "T.S. Elliot"},
+                    new Alternativa { Correta = true, Descricao = "James Joyce"},
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 60,
+                Enunciado = "Qual o símbolo químico do radônio?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "Rr"},
+                    new Alternativa { Correta = false, Descricao = "Rd"},
+                    new Alternativa { Correta = true, Descricao = "Rn"},
+                    new Alternativa { Correta = false, Descricao = "Ro"},
+                }
+            },
+        };
+
+        List<Pergunta> perguntas_finais = new()
+        {
+            new Pergunta
+            {
+                Id = 61,
+                Enunciado = "Qual a origem da palavra folclore?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "Holandesa"},
+                    new Alternativa { Correta = true, Descricao = "Inglesa"},
+                    new Alternativa { Correta = false, Descricao = "Francesa"},
+                    new Alternativa { Correta = false, Descricao = "Brasileira"},
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 62,
+                Enunciado = "Nova Caledônia faz parte da:",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "Micronésia"},
+                    new Alternativa { Correta = true, Descricao = "Melanésia"},
+                    new Alternativa { Correta = false, Descricao = "Polinésia"},
+                    new Alternativa { Correta = false, Descricao = "Indonésia"},
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 63,
+                Enunciado = "Como se chama o explorador de grutas e cavernas?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = true, Descricao = "Espeleólogo"},
+                    new Alternativa { Correta = false, Descricao = "Agrostólogo"},
+                    new Alternativa { Correta = false, Descricao = "Psicólogo"},
+                    new Alternativa { Correta = false, Descricao = "Campanólogo"},
+                }
+            },
         };
         public App()
         {
