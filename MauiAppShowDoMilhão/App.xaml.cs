@@ -5,7 +5,7 @@ namespace MauiAppShowDoMilhão
 {
     public partial class App : Application
     {
-        List<Pergunta> perguntas_faceis = new()
+        static List<Pergunta> perguntas_faceis = new()
         {
             new Pergunta
             {
@@ -251,7 +251,7 @@ namespace MauiAppShowDoMilhão
 
         };
 
-        List<Pergunta> perguntas_medias = new()
+        static List<Pergunta> perguntas_medias = new()
         {
             new Pergunta
             {
@@ -497,7 +497,7 @@ namespace MauiAppShowDoMilhão
 
         };
 
-        List<Pergunta> perguntas_dificeis = new()
+        static List<Pergunta> perguntas_dificeis = new()
         {
             new Pergunta
             {
@@ -760,7 +760,7 @@ namespace MauiAppShowDoMilhão
             },
         };
 
-        List<Pergunta> perguntas_finais = new()
+        static List<Pergunta> perguntas_finais = new()
         {
             new Pergunta
             {
@@ -801,6 +801,43 @@ namespace MauiAppShowDoMilhão
                 }
             },
         };
+
+        public static Pergunta getRandomPerguntaFacil()
+        {
+            Random r = new Random();
+
+            int sorteado = r.Next(1, 20);
+
+            return perguntas_faceis[sorteado]; 
+        }
+
+        public static Pergunta getRandomPerguntaMedia()
+        {
+            Random r = new Random();
+
+            int sorteado = r.Next(21, 40);
+
+            return perguntas_medias[sorteado];
+        }
+
+        public static Pergunta getRandomPerguntaDificil()
+        {
+            Random r = new Random();
+
+            int sorteado = r.Next(41, 60);
+
+            return perguntas_dificeis[sorteado];
+        }
+
+        public static Pergunta getRandomPerguntaFinal()
+        {
+            Random r = new Random();
+
+            int sorteado = r.Next(61, 63);
+
+            return perguntas_finais[sorteado];
+        }
+
         public App()
         {
             InitializeComponent();
