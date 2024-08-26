@@ -1,5 +1,4 @@
 ﻿using MauiAppShowDoMilhão.Models;
-using System.Net.Http.Headers;
 
 namespace MauiAppShowDoMilhão
 {
@@ -493,8 +492,6 @@ namespace MauiAppShowDoMilhão
                     new Alternativa { Correta = false, Descricao = "Carlos Galhardo"},
                 }
             },
-
-
         };
 
         static List<Pergunta> perguntas_dificeis = new()
@@ -806,7 +803,7 @@ namespace MauiAppShowDoMilhão
         {
             Random r = new Random();
 
-            int sorteado = r.Next(1, 20);
+            int sorteado = r.Next(1, perguntas_faceis.Count);
 
             return perguntas_faceis[sorteado]; 
         }
@@ -815,7 +812,7 @@ namespace MauiAppShowDoMilhão
         {
             Random r = new Random();
 
-            int sorteado = r.Next(21, 40);
+            int sorteado = r.Next(21, perguntas_medias.Count);
 
             return perguntas_medias[sorteado];
         }
@@ -824,7 +821,7 @@ namespace MauiAppShowDoMilhão
         {
             Random r = new Random();
 
-            int sorteado = r.Next(41, 60);
+            int sorteado = r.Next(41, perguntas_dificeis.Count);
 
             return perguntas_dificeis[sorteado];
         }
@@ -833,7 +830,7 @@ namespace MauiAppShowDoMilhão
         {
             Random r = new Random();
 
-            int sorteado = r.Next(61, 63);
+            int sorteado = r.Next(61, perguntas_finais.Count);
 
             return perguntas_finais[sorteado];
         }

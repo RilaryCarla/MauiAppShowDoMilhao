@@ -1,10 +1,9 @@
-﻿using Android.Service.Voice;
-
-namespace MauiAppShowDoMilhão
+﻿namespace MauiAppShowDoMilhão
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        double premio = 0;
+        int pergunta_count = 0;
 
         public MainPage()
         {
@@ -17,7 +16,7 @@ namespace MauiAppShowDoMilhão
             this.BindingContext = App.getRandomPerguntaFacil();
         }
 
-        private void Button_Clicked_Proxima(object sender, EventArgs e)
+        private async void Button_Clicked_Proxima(object sender, EventArgs e)
         {
             bool acertou = false;
             string resp = "";
@@ -61,13 +60,33 @@ namespace MauiAppShowDoMilhão
 
             if (acertou)
             {
-                DisplayAlert("Acertou!", resp, "Ok");
-                this.BindingContext = App.getRandomPerguntaFacil();
+                await DisplayAlert("Acertou!", resp, "Ok");
+                avanca_pergunta();
             }
             else
             {
-                DisplayAlert("Errou!", "Você perdeu!", "Ok");
+                await DisplayAlert("Errou!", "Você perdeu!", "Ok");
+            }
+        }
+
+        void avanca_pergunta()
+        {
+            if(pergunta_count <= 5)
+            {
+                premio = premio + 1000;
                 this.BindingContext = App.getRandomPerguntaFacil();
+            }
+
+            if(pergunta_count > 5 && pergunta_count <= 10)
+            {
+                premio = premio + 10000;
+                this.BindingContext = App.getRandomPerguntaMedia();
+            }
+
+            if(pergunta_count > 10 && pergunta_count < 15)
+            {
+                premio = premio + 100000;
+                this.BindingContext= App.getRandomPerguntaDificil();
             }
         }
     }
