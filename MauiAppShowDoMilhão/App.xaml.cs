@@ -799,40 +799,95 @@ namespace MauiAppShowDoMilhão
             },
         };
 
+        static List<Pergunta> perguntas_sorteadas = new();
+
         public static Pergunta getRandomPerguntaFacil()
         {
             Random r = new Random();
 
-            int sorteado = r.Next(1, perguntas_faceis.Count);
+            Pergunta pergunta_sorteada;
 
-            return perguntas_faceis[sorteado]; 
+            while (true)
+            {
+                int sortedo = r.Next(1, 20);
+
+                pergunta_sorteada = perguntas_faceis[sorteado];
+
+                if (!perguntas_sorteadas.Contains(pergunta_sorteada))
+                {
+                    perguntas_sorteadas.Add(pergunta_sorteada);
+                    break;
+                }
+            }
+
+            return pergunta_sorteada;
         }
+
 
         public static Pergunta getRandomPerguntaMedia()
         {
             Random r = new Random();
 
-            int sorteado = r.Next(21, perguntas_medias.Count);
+            Pergunta pergunta_sorteada;
 
-            return perguntas_medias[sorteado];
+            while (true)
+            {
+                int sorteado = r.Next(21, 41);
+
+                pergunta_sorteada = perguntas_medias[sorteado];
+
+                if (!perguntas_sorteadas.Contains(pergunta_sorteada))
+                {
+                    perguntas_sorteadas.Add(perguntas_medias[sorteado]);
+                    break;
+                }
+            }
+
+            return pergunta_sorteada;
         }
 
         public static Pergunta getRandomPerguntaDificil()
         {
             Random r = new Random();
 
-            int sorteado = r.Next(41, perguntas_dificeis.Count);
+            Pergunta pergunta_sorteada;
 
-            return perguntas_dificeis[sorteado];
+            while (true)
+            {
+                int sorteado = r.Next(41, 61);
+
+                pergunta_sorteada = perguntas_dificeis[sorteado];
+
+                if (!perguntas_sorteadas.Contains (pergunta_sorteada))
+                {
+                    perguntas_sorteadas.Add(perguntas_dificeis[sorteado]);
+                    break;
+                }
+            }
+
+            return pergunta_sorteada;
         }
 
         public static Pergunta getRandomPerguntaFinal()
         {
             Random r = new Random();
 
-            int sorteado = r.Next(61, perguntas_finais.Count);
+            Pergunta pergunta_sorteada;
 
-            return perguntas_finais[sorteado];
+            while (true)
+            {
+                int sorteado = r.Next(61, 63);
+
+                pergunta_sorteada = perguntas_finais[sorteado];
+
+                if (!perguntas_sorteadas.Contains(pergunta_sorteada))
+                {
+                    perguntas_finais.Add(perguntas_finais[sorteado]);
+                    break;
+                }
+            }
+
+            return pergunta_sorteada;
         }
 
         public App()
