@@ -11,18 +11,6 @@ namespace MauiAppShowDoMilhão
         public MainPage()
         {
             InitializeComponent();
-
-            this.BindingContext = App.getRandomPerguntaFacil();
-
-            lbl_nivel.Text = "Facil";
-            lbl_premio.Text = premio.ToString("C");
-            lbl_pergunta_numero.Text = pergunta_count.ToString();
-
-            //adiciona som
-            Stream track =
-                FileSystem.OpenAppPackageFileAsync("0.mp3").Result;
-            AudioManager.Current.CreatePlayer(track).Play;
-
         }
 
         private void toca_som()
